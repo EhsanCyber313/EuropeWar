@@ -102,6 +102,7 @@ function madan() {
 }
 
 function upgred(){
+    resultName.innerHTML = 'بازدهی کل : '
     var goldResJade = levelJade.innerHTML * result.jade.gold
     var goldResKarvan = levelKarvan.innerHTML * result.karvan.gold
     var goldResRestooran = levelRestooran.innerHTML * result.restooran.gold
@@ -121,7 +122,7 @@ function upgred(){
 }
 
 function sellPrice() {
-    resultName.innerHTML = 'مجموع قیمت خرید ها:'
+    resultName.innerHTML = 'مجموع قیمت خرید ها : '
     var goldResultSell = (levelJade.innerHTML * structures.jade.gold) + (levelKarvan.innerHTML * structures.karvan.gold) + (levelRestooran.innerHTML * structures.restooran.gold) + (levelMaabad.innerHTML * structures.maabad.gold) + (levelwooder.innerHTML * structures.wooder.gold) + (levelFarm.innerHTML * structures.farm.gold) + (levelShekar.innerHTML * structures.shekar.gold) + (levelPeople.innerHTML * structures.people.gold) + (levelMadan.innerHTML * structures.madan.gold)
     var woodResultSell = (levelJade.innerHTML * structures.jade.wood) + (levelKarvan.innerHTML * structures.karvan.wood) + (levelRestooran.innerHTML * structures.restooran.wood) + (levelMaabad.innerHTML * structures.maabad.wood) + (levelwooder.innerHTML * structures.wooder.wood) + (levelFarm.innerHTML * structures.farm.wood) + (levelShekar.innerHTML * structures.shekar.wood) + (levelPeople.innerHTML * structures.people.wood) + (levelMadan.innerHTML * structures.madan.wood)
     var personResultSell = (levelJade.innerHTML * structures.jade.person) + (levelKarvan.innerHTML * structures.karvan.person) + (levelRestooran.innerHTML * structures.restooran.person) + (levelMaabad.innerHTML * structures.maabad.person) + (levelwooder.innerHTML * structures.wooder.person) + (levelFarm.innerHTML * structures.farm.person) + (levelShekar.innerHTML * structures.shekar.person) + (levelPeople.innerHTML * structures.people.person) + (levelMadan.innerHTML * structures.madan.person)
