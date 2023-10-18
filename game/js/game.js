@@ -1,8 +1,5 @@
 let $ = document
-// let goldJade = $.querySelector('.gold-jade')
-// let woodJade = $.querySelector('.wood-jade')
-// let personJade = $.querySelector('.person-jade')
-// let stoneJade = $.querySelector('.stone-jade')
+let resultName = $.querySelector('#result-name')
 let goldAll = $.querySelector('.gold-all')
 let woodAll = $.querySelector('.wood-all')
 let personAll = $.querySelector('.person-all')
@@ -13,6 +10,7 @@ let happyAll = $.querySelector('.happy-all')
 
 let allNums = $.querySelectorAll('.number')
 let upgrade = $.querySelector('.upgrade')
+let sell = $.querySelector('.sell')
 
 let btnJade = $.querySelector('.button-jade')
 let btnKarvan = $.querySelector('.button-karvan')
@@ -23,7 +21,6 @@ let btnFarm = $.querySelector('.button-farm')
 let btnShekar = $.querySelector('.button-shekar')
 let btnPeople = $.querySelector('.button-people')
 let btnMadan = $.querySelector('.button-madan')
-let sell = $.querySelector('.sell')
 
 let levelJade = $.querySelector('.jade-lvl')
 let levelKarvan = $.querySelector('.karvan-lvl')
@@ -36,7 +33,7 @@ let levelPeople = $.querySelector('.people-lvl')
 let levelMadan = $.querySelector('.madan-lvl')
 
 let structures = {
-    jade: {gold: 1000, wood: 250, person: 25, stone: 25},
+    jade: {gold: 750, wood: 250, person: 25, stone: 25},
     karvan: {gold: 1000, wood: 500, person: 25, stone: 25},
     restooran: {gold: 1000, wood: 750, person: 25, stone: 25},
     maabad: {gold: 1000, wood: 250, person: 50, stone: 25},
@@ -123,6 +120,24 @@ function upgred(){
     wheatAll.innerHTML = wheatResFarm
 }
 
+function sellPrice() {
+    resultName.innerHTML = 'قیمت خرید ها:'
+    var goldResultSell = (levelJade.innerHTML * structures.jade.gold) + (levelKarvan.innerHTML * structures.karvan.gold) + (levelRestooran.innerHTML * structures.restooran.gold) + (levelMaabad.innerHTML * structures.maabad.gold) + (levelwooder.innerHTML * structures.wooder.gold) + (levelFarm.innerHTML * structures.farm.gold) + (levelShekar.innerHTML * structures.shekar.gold) + (levelPeople.innerHTML * structures.people.gold) + (levelMadan.innerHTML * structures.madan.gold)
+    var woodResultSell = (levelJade.innerHTML * structures.jade.wood) + (levelKarvan.innerHTML * structures.karvan.wood) + (levelRestooran.innerHTML * structures.restooran.wood) + (levelMaabad.innerHTML * structures.maabad.wood) + (levelwooder.innerHTML * structures.wooder.wood) + (levelFarm.innerHTML * structures.farm.wood) + (levelShekar.innerHTML * structures.shekar.wood) + (levelPeople.innerHTML * structures.people.wood) + (levelMadan.innerHTML * structures.madan.wood)
+    var personResultSell = (levelJade.innerHTML * structures.jade.person) + (levelKarvan.innerHTML * structures.karvan.person) + (levelRestooran.innerHTML * structures.restooran.person) + (levelMaabad.innerHTML * structures.maabad.person) + (levelwooder.innerHTML * structures.wooder.person) + (levelFarm.innerHTML * structures.farm.person) + (levelShekar.innerHTML * structures.shekar.person) + (levelPeople.innerHTML * structures.people.person) + (levelMadan.innerHTML * structures.madan.person)
+    var stoneResultSell = (levelJade.innerHTML * structures.jade.stone) + (levelKarvan.innerHTML * structures.karvan.stone) + (levelRestooran.innerHTML * structures.restooran.stone) + (levelMaabad.innerHTML * structures.maabad.stone) + (levelwooder.innerHTML * structures.wooder.stone) + (levelFarm.innerHTML * structures.farm.stone) + (levelShekar.innerHTML * structures.shekar.stone) + (levelPeople.innerHTML * structures.people.stone) + (levelMadan.innerHTML * structures.madan.stone)
+    goldAll.innerHTML = goldResultSell
+    woodAll.innerHTML = woodResultSell
+    personAll.innerHTML = personResultSell
+    stoneAll.innerHTML = stoneResultSell
+    
+    happyAll.innerHTML = 0
+    meatAll.innerHTML = 0
+    wheatAll.innerHTML = 0
+}
+
+
+
 btnJade.addEventListener('click', jade)
 btnKarvan.addEventListener('click', karvan)
 btnRestooran.addEventListener('click', restooran)
@@ -133,7 +148,4 @@ btnPeople.addEventListener('click', people)
 btnWooder.addEventListener('click', wooder)
 btnMadan.addEventListener('click', madan)
 upgrade.addEventListener('click', upgred)
-
-sell.addEventListener('click', function() {
-    alert("ایشالا در اپدیت بعدی :)")
-})
+sell.addEventListener('click', sellPrice)
