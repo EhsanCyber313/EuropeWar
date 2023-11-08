@@ -8,7 +8,7 @@ const nameID = $.getElementById('nameID')
 
 buttonEdit.addEventListener('click', function () {
     localStorage.clear();
-    var randomNumber = Math.floor(Math.random() * 28);
+    var randomNumber = Math.ceil(Math.random() * 28);
     let inputName = prompt('نام جدید لرد خود را وارد کنید:');
     let inputCountry = prompt('نام جدید کشور خود را وارد کنید:');
     let inputCity = prompt('نام جدید شهر خود را وارد کنید:');
